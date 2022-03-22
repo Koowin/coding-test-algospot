@@ -4,7 +4,6 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        ClockSync cs = new ClockSync();
-        cs.solution();
+        new QuadTree().solution();
     }
 }
