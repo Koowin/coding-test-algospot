@@ -1,3 +1,5 @@
+package divideconquer;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -5,7 +7,7 @@ import java.io.InputStreamReader;
 
 public class QuadTree {
     public void solution() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream("./input/quadTree");
+        FileInputStream fileInputStream = new FileInputStream("./input/divideconquer/quadTree");
         BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream));
 
         int caseCount = Integer.parseInt(br.readLine());

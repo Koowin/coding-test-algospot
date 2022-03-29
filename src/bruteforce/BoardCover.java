@@ -1,3 +1,5 @@
+package bruteforce;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -5,7 +7,7 @@ import java.io.InputStreamReader;
 
 public class BoardCover {
     public static void solution() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream("./input/boardCover");
+        FileInputStream fileInputStream = new FileInputStream("./input/bruteforce/boardCover");
         BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream));
 
         int caseCount = Integer.parseInt(br.readLine());

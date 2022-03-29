@@ -1,3 +1,5 @@
+package divideconquer;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -6,7 +8,7 @@ import java.util.Arrays;
 
 public class Fence {
     public void solution() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream("./input/fence");
+        FileInputStream fileInputStream = new FileInputStream("./input/divideconquer/fence");
         BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream));
 
         int caseCount = Integer.parseInt(br.readLine());

@@ -1,9 +1,9 @@
-import java.io.BufferedReader;
+import dynamic.WildCard;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        new JumpGame().solution();
+        new WildCard().solution();
     }
 }

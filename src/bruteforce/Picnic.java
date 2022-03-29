@@ -1,8 +1,10 @@
+package bruteforce;
+
 import java.io.*;
 
 public class Picnic {
     public void solution() throws IOException{
-        FileInputStream fileInputStream = new FileInputStream("./input/picnic");
+        FileInputStream fileInputStream = new FileInputStream("./input/bruteforce/picnic");
         BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream));
 
         int caseCount = Integer.parseInt(br.readLine());
