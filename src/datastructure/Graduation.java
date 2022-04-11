@@ -1,3 +1,5 @@
+package datastructure;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -6,7 +8,7 @@ import java.util.*;
 
 public class Graduation {
     public void solution() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream("./input/graduation");
+        FileInputStream fileInputStream = new FileInputStream("./input/datastructure/graduation");
         BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream));
 
         int caseCount = Integer.parseInt(br.readLine());
@@ -56,31 +58,25 @@ public class Graduation {
         }
 
         private int enrollSemester(int semester, int clearedCourse, int count) {
-            if (semester == openCourse.length) {
-                return count;
+            int c = Integer.bitCount(clearedCourse);
+            if (c >= remainCourseCount) {
+                return c;
             }
+            if (count == openCourse.length) {
+                return Integer.MAX_VALUE;
+            }
+
+            List<Integer> candidateCourse = getCandidateCourse(semester, clearedCourse);
             int ret = Integer.MAX_VALUE;
-            List<Integer> canEnrolList = new ArrayList<>();
-            for (int i = 0; i < totalCourseCount; i++) {
-                if ((clearedCourse & 1 << i) == 0 && canEnrol(clearedCourse, i)) {
-                    canEnrolList.add(i);
-                }
+            for (int i : candidateCourse) {
+                ret = Math.min(ret, enrollSemester(semester + 1, clearedCourse | i, count + 1));
             }
-            if (canEnrolList.isEmpty()) {
-                ret = enrollSemester(semester + 1, clearedCourse, count);
-            } else if (canEnrolList.size() <= courseLimit) {
-                for (Integer i : canEnrolList) {
-                    clearedCourse |= 1 << i;
-                }
-                ret = enrollSemester(semester + 1, clearedCourse, count + 1);
-            } else {
-
-            }
-
             return ret;
         }
 
-        private List<Integer> makeClearedCourse(List<Integer> candidateCourse, int clearedCourse) {
+        private List<Integer> getCandidateCourse(int semester, int clearedCourse) {
+            List<Integer> ret = new ArrayList<>();
+
             return null;
         }
 
